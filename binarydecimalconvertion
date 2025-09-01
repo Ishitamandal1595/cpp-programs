@@ -1,0 +1,36 @@
+#include<iostream>
+using namespace std;
+
+int decimalToans(int decinum)
+{
+    int pow=1, ans=0;
+    while(decinum>0) {
+        int rem=decinum%2;
+        decinum /=2;
+        ans+=pow*rem;
+        pow=pow*10;
+    }
+    return ans;
+}
+
+int binaryToDecimal(int binum) {
+    int ans=0, pow=1;
+    while(binum>0) {
+        int rem=binum%10;
+        ans+=pow*rem;
+        binum /=10;
+        pow*=2;
+    }
+}
+
+int main()
+{
+    cout<<"Enter a number to make it binary: ";
+    int num;
+    cin>>num;
+    cout<<decimalToans(num)<<endl;
+    cout<<"Enter a number to make it decimal: ";
+    cin>>num;
+    cout<<binaryToDecimal(num)<<endl;
+    return 0;
+}
